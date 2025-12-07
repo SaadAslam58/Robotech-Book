@@ -1,55 +1,74 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+## 📜 Constitution for Physical AI & Humanoid Robotics Textbook
 
-## Core Principles
-
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
-
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
-
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
-
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
-
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-### [PRINCIPLE_6_NAME]
+### Table of Contents
+1.  🎯 Core Mission
+2.  👥 Audience Profile
+3.  ✅ Quality & Formatting Standards
+4.  🤖 RAG & Personalization Hooks
+5.  🚫 Non-Goals & Scope Exclusions
+6.  🔄 Review and Update Cycle
 
 
-[PRINCIPLE__DESCRIPTION]
+**Project:** AI-Native Textbook on Physical AI & Humanoid Robotics
+**Target Platform:** Docusaurus (Markdown/MDX) deployed on GitHub Pages.
+**Author:** Panaversity Hackathon Participant.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### 1. 🎯 Core Mission
+Create a cutting-edge, academic yet practical textbook designed to bridge the gap between digital AI (LLMs/Agents) and the physical world (Robotics). The content must prepare students to control humanoid robots using ROS 2, Gazebo, and NVIDIA Isaac.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### 2. 👥 Audience Profile
+* **Primary:** Computer Science students and developers transitioning into robotics.
+*   **Knowledge Base:** Familiar with Python (intermediate), basic AI/ML concepts, and command-line interfaces.
+*   **Prerequisites:** Readers should have a foundational understanding of programming logic and be comfortable with basic algebra. No prior experience with robotics hardware or advanced physics is assumed, as these will be introduced in the textbook.
+* **Tone:** Technical, authoritative, yet accessible. Use "we" for instructional guidance.
+* **Language:** American English.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### 3. ✅ Quality & Formatting Standards
+*   **Markdown Only:** All output must be valid Markdown (`.md` or `.mdx`) for Docusaurus.
+*   **Heading Structure**:
+    *   `#` (H1): Reserved for the main chapter title. Each chapter file must have exactly one H1.
+    *   `##` (H2): Major sections within a chapter.
+    *   `###` (H3): Sub-sections.
+    *   `####` (H4+): Use sparingly for fine-grained organization.
+    *   Ensure logical hierarchy and sequential numbering where applicable (e.g., Chapter 1.1, 1.1.1).
+*   **Interactive Elements:** Use Docusaurus admonitions frequently to highlight hardware constraints, important information, or warnings about potential mistakes. Examples:
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+    ```md
+    :::tip
+    This is a helpful tip!
+    :::
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+    :::info
+    Important information to note.
+    :::
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+    :::warning
+    Be careful with this step.
+    :::
+    ```
+*   **Code Blocks:** All code must be Python (`rclpy`) or C++ (where strictly necessary) with clear, concise comments explaining non-obvious logic. Use ` ```python ` or ` ```bash ` syntax, and ensure code is runnable.
+*   **Code Commenting**: Comments should explain *why* code does something, not *what* it does (unless the 'what' is complex). Avoid excessive or redundant comments.
+*   **Internal and External Linking**: Use relative paths for internal links within the Docusaurus site. For external references, use standard Markdown link syntax `[Link Text](URL)` and ensure all URLs are valid and accessible.
+* **Visuals:** Where a diagram is needed, insert a placeholder tag: `[Image: Diagram of X]`.
+* **Equations:** Use LaTeX format (e.g., $F=ma$) for physics descriptions.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### 4. 🤖 RAG & Personalization Hooks
+*   **Metadata:** Every chapter must start with Frontmatter. Example:
+    ```yaml
+    ---
+    id: chapter-id
+    title: Chapter Title
+    sidebar_label: Short Label
+    description: A brief summary of the chapter content.
+    ---
+    ```
+* **Personalization Tags:** Structure content so it can later be filtered. Use comment markers like `` and `` for sections specific to physical hardware vs. simulation only.
+
+### 5. 🚫 Non-Goals & Scope Exclusions
+* **No Fluff:** Avoid generic AI hype. Focus on technical implementation (ROS 2 nodes, Isaac Sim setup).
+*   **Hardware Agnostic (Mostly):** While focusing on Unitree/NVIDIA, explain concepts generally enough that they apply to other robots where possible.
+*   **Avoid Future-Proofing:** Do not include content or features that are not explicitly required by the current project scope or specification. Prioritize clarity and directness over hypothetical future extensibility.
+
+### 6. 🔄 Review and Update Cycle
+*   **Regular Review:** The constitution should be reviewed quarterly or upon significant project shifts to ensure its continued relevance and accuracy.
+*   **Amendment Process:** Any proposed amendments must be formally documented, discussed, and approved by project stakeholders (e.g., via an ADR process if significant).
