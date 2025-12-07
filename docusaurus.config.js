@@ -13,14 +13,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'http://localhost:3000',
+  url: 'https://SaadAslam58.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/',
+  baseUrl: '/Robotech-Book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'panaversity', // Usually your GitHub org/user name.
-  projectName: 'robotech-book', // Usually your repo name.
+  organizationName: 'SaadAslam58', // Usually your GitHub org/user name.
+  projectName: 'Robotech-Book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -82,7 +82,7 @@ const config = {
             items: [
               {
                 label: 'Textbook',
-                to: '/docs/part1/chapter1-embodied-intelligence-shift',
+                to: '/Robotech-Book/part1/chapter1-embodied-intelligence-shift',
               },
             ],
           },
