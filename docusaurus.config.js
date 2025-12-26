@@ -82,7 +82,7 @@ const config = {
             items: [
               {
                 label: 'Textbook',
-                to: '/Robotech-Book/part1/chapter1-embodied-intelligence-shift',
+                to: '/part1/chapter1-embodied-intelligence-shift',
               },
             ],
           },

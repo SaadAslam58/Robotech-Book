@@ -6,7 +6,8 @@
 3.  ✅ Quality & Formatting Standards
 4.  🤖 RAG & Personalization Hooks
 5.  🚫 Non-Goals & Scope Exclusions
-6.  🔄 Review and Update Cycle
+6.  🌐 System Architecture & API Design
+7.  🔄 Review and Update Cycle
 
 
 **Project:** AI-Native Textbook on Physical AI & Humanoid Robotics
@@ -69,6 +70,12 @@ Create a cutting-edge, academic yet practical textbook designed to bridge the ga
 *   **Hardware Agnostic (Mostly):** While focusing on Unitree/NVIDIA, explain concepts generally enough that they apply to other robots where possible.
 *   **Avoid Future-Proofing:** Do not include content or features that are not explicitly required by the current project scope or specification. Prioritize clarity and directness over hypothetical future extensibility.
 
-### 6. 🔄 Review and Update Cycle
+### 6. 🌐 System Architecture & API Design
+* **Backend API Resilience:** The backend FastAPI server must handle external service failures gracefully. When Qdrant or other external services are unavailable, the system must provide fallback responses rather than throwing errors.
+* **Error Handling:** All API endpoints should catch exceptions from external services (like Qdrant) and provide appropriate fallback behavior. For example, if the knowledge base is unavailable, the system should still respond to user queries with a graceful fallback message.
+* **Frontend-Backend Communication:** The Docusaurus frontend communicates with the backend API at `http://127.0.0.1:8000` using standard HTTP requests. The chatbot component handles CORS and error states appropriately.
+* **API Endpoints:** The backend provides `/query` and `/query-openai` endpoints that retrieve context from Qdrant when available, with fallback to general responses when the knowledge base is unavailable.
+
+### 7. 🔄 Review and Update Cycle
 *   **Regular Review:** The constitution should be reviewed quarterly or upon significant project shifts to ensure its continued relevance and accuracy.
 *   **Amendment Process:** Any proposed amendments must be formally documented, discussed, and approved by project stakeholders (e.g., via an ADR process if significant).
